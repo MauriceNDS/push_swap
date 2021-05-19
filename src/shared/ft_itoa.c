@@ -12,10 +12,14 @@ static char	*count_char(long n, int *count)
 		n *= -1;
 		(*count)++;
 	}
-	while (n /= 10)
+	while (n / 10)
+	{
+		n /= 10;
 		(*count)++;
+	}
 	(*count)++;
-	if (!(res = malloc(sizeof(char) * (*count + 1))))
+	res = malloc(sizeof(char) * (*count + 1));
+	if (!res)
 		return (NULL);
 	return (res);
 }
@@ -42,7 +46,8 @@ char	*ft_itoa(int n)
 	i = 0;
 	div = 1;
 	cp = (long)n;
-	if (!(res = count_char(cp, &count)))
+	res = count_char(cp, &count);
+	if (!res)
 		return (NULL);
 	while (--count)
 		div *= 10;

@@ -6,7 +6,7 @@
 /*   By: adel-sol <adel-sol@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:54:15 by adel-sol          #+#    #+#             */
-/*   Updated: 2021/05/17 14:20:12 by adel-sol         ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 07:30:48 by adel-sol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ char	*ft_strdup(const char *s1)
 
 void	ft_putendl(char *s)
 {
-	// printf("%s\n", s);
-	if (ft_strlen(s) > 0)
-		write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	printf("%s\n", s);
 }
 
 void	print_stack(t_list *a, char *str)
